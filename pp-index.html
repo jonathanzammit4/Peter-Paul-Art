@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Father Peter Paul Sultana</title>
+  <title>Father [Name] — Art & Ministry</title>
   <meta name="description" content="The art, mission, and projects of Father [Name] — a priest, artist, and contemplative." />
   <link rel="stylesheet" href="./style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,24 +13,39 @@
 <body>
 
   <!-- ========== NAVIGATION ========== -->
+  <!--
+    HOW THE MOBILE MENU WORKS (no JavaScript):
+    - A hidden checkbox (#nav-toggle) is the on/off switch.
+    - The <label> styled as a hamburger icon toggles that checkbox when clicked.
+    - In style.css, when the checkbox is :checked, the nav menu slides in.
+    - The onclick on each link simply unchecks the box to close the menu.
+  -->
   <header class="site-header" id="top">
     <nav class="nav-container" aria-label="Main Navigation">
+
       <a href="#top" class="nav-logo">
         <span class="logo-cross">✦</span>
         <span class="logo-name">Fr. [Name]</span>
       </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <!-- Hidden checkbox — controls open/close state -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#mission">Mission</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <!-- Label = the visual hamburger button on mobile -->
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="#about"    onclick="document.getElementById('nav-toggle').checked=false">About</a></li>
+        <li><a href="#mission"  onclick="document.getElementById('nav-toggle').checked=false">Mission</a></li>
+        <li><a href="#gallery"  onclick="document.getElementById('nav-toggle').checked=false">Gallery</a></li>
+        <li><a href="#projects" onclick="document.getElementById('nav-toggle').checked=false">Projects</a></li>
+        <li><a href="#contact"  onclick="document.getElementById('nav-toggle').checked=false">Contact</a></li>
       </ul>
+
     </nav>
   </header>
 
@@ -41,7 +56,7 @@
       <div class="hero-bg-texture"></div>
       <div class="hero-content">
         <p class="hero-label">Priest · Artist · Contemplative</p>
-        <h1 class="hero-title">Father<br /><em>Peter Paul Sultana</em></h1>
+        <h1 class="hero-title">Father<br /><em>[Your Name]</em></h1>
         <p class="hero-subtitle">
           Where faith becomes form, and silence finds its voice in colour and light.
         </p>
@@ -57,7 +72,13 @@
     <section class="section about" id="about">
       <div class="container two-col">
         <div class="about-image-wrap">
-          <!-- Replace src with your actual photo -->
+          <!--
+            TO ADD A REAL PHOTO:
+            1. Create an "images" folder next to index.html
+            2. Put your photo inside it (e.g. portrait.jpg)
+            3. Delete the div below and replace with:
+               <img src="./images/portrait.jpg" alt="Father [Name]" />
+          -->
           <div class="about-image-placeholder" aria-label="Portrait of Father [Name]">
             <div class="placeholder-icon">✦</div>
             <p>Your Photo Here</p>
@@ -68,7 +89,7 @@
           <span class="section-tag">About</span>
           <h2 class="section-title">A Life Shaped by<br /><em>Faith &amp; Beauty</em></h2>
           <p>
-            Father Peter Paul Sultana has served as a priest for [X] years, ministering to communities while maintaining a deep commitment to the sacred arts. His work spans painting, iconography, sculpture, and mixed media — each piece a form of prayer made visible.
+            Father [Name] has served as a priest for [X] years, ministering to communities while maintaining a deep commitment to the sacred arts. His work spans painting, iconography, sculpture, and mixed media — each piece a form of prayer made visible.
           </p>
           <p>
             Born in [City/Country], he studied theology at [Seminary] and fine arts at [Institution]. He believes art is among the most honest ways a human being can reach toward the transcendent.
@@ -114,7 +135,12 @@
         </p>
 
         <div class="gallery-grid">
-          <!-- Repeat and replace these cards with real artwork -->
+          <!--
+            TO USE REAL ARTWORK IMAGES:
+            Replace the <div class="gallery-thumb"> and its contents with:
+            <img src="./images/artwork-name.jpg" alt="Description" class="gallery-thumb-img" />
+          -->
+
           <article class="gallery-card">
             <div class="gallery-thumb" style="--hue: 30deg;">
               <span class="gallery-thumb-label">I</span>
@@ -225,6 +251,7 @@
         <p class="contact-intro">
           For commissions, exhibition enquiries, workshop bookings, or simply to share a thought — Father [Name] welcomes correspondence.
         </p>
+        <!-- Replace the email address with the real one -->
         <a href="mailto:your.email@example.com" class="contact-email">your.email@example.com</a>
       </div>
     </section>
@@ -242,13 +269,15 @@
 
       <!-- Social Media Icons — replace # with real URLs when available -->
       <nav class="footer-social" aria-label="Social media links">
-        <!-- Facebook -->
+
+        <!-- Facebook — replace # with your Facebook page URL -->
         <a href="#" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
           </svg>
         </a>
-        <!-- Instagram -->
+
+        <!-- Instagram — replace # with your Instagram profile URL -->
         <a href="#" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -256,29 +285,32 @@
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
           </svg>
         </a>
-        <!-- YouTube -->
+
+        <!-- YouTube — replace # with your YouTube channel URL -->
         <a href="#" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
             <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
             <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/>
           </svg>
         </a>
-        <!-- Email -->
+
+        <!-- Email icon -->
         <a href="mailto:your.email@example.com" class="social-link" aria-label="Email">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
           </svg>
         </a>
+
       </nav>
 
-      <p class="footer-copy">
-        &copy; <span id="year"></span> Father [Name]. All rights reserved.
-      </p>
+      <!-- Update the year manually each January if you wish -->
+      <p class="footer-copy">&copy; 2025 Father [Name]. All rights reserved.</p>
 
     </div>
   </footer>
 
-  <script src="./script.js"></script>
+  <!-- No script.js file needed — this site runs on HTML and CSS only -->
+
 </body>
 </html>
